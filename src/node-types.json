@@ -5,6 +5,77 @@
     "fields": {}
   },
   {
+    "type": "deref",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "deref",
+          "named": true
+        },
+        {
+          "type": "keyword",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "map",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quasiquote",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "unquote",
+          "named": true
+        },
+        {
+          "type": "unquote_splicing",
+          "named": true
+        },
+        {
+          "type": "vector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "list",
     "named": true,
     "fields": {},
@@ -14,6 +85,10 @@
       "types": [
         {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "deref",
           "named": true
         },
         {
@@ -84,6 +159,10 @@
           "named": true
         },
         {
+          "type": "deref",
+          "named": true
+        },
+        {
           "type": "keyword",
           "named": true
         },
@@ -148,6 +227,10 @@
       "types": [
         {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "deref",
           "named": true
         },
         {
@@ -218,6 +301,10 @@
           "named": true
         },
         {
+          "type": "deref",
+          "named": true
+        },
+        {
           "type": "keyword",
           "named": true
         },
@@ -282,6 +369,10 @@
       "types": [
         {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "deref",
           "named": true
         },
         {
@@ -350,6 +441,10 @@
       "types": [
         {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "deref",
           "named": true
         },
         {
@@ -435,6 +530,10 @@
           "named": true
         },
         {
+          "type": "deref",
+          "named": true
+        },
+        {
           "type": "keyword",
           "named": true
         },
@@ -502,6 +601,10 @@
           "named": true
         },
         {
+          "type": "deref",
+          "named": true
+        },
+        {
           "type": "keyword",
           "named": true
         },
@@ -566,6 +669,10 @@
       "types": [
         {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "deref",
           "named": true
         },
         {
@@ -641,6 +748,10 @@
   },
   {
     "type": ")",
+    "named": false
+  },
+  {
+    "type": "@",
     "named": false
   },
   {

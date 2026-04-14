@@ -25,6 +25,7 @@ module.exports = grammar({
         $.quasiquote,
         $.unquote_splicing,
         $.unquote,
+        $.deref,
       ),
 
     nil: ($) => "nil",
@@ -36,7 +37,7 @@ module.exports = grammar({
 
     keyword: ($) => token(seq(":", /[^\s,;()\[\]{}'"`~]+/)),
 
-    symbol: ($) => token(/[^\s,;()\[\]{}'"`~\d:#][^\s,;()\[\]{}'"`~]*/),
+    symbol: ($) => token(/[^\s,;()\[\]{}'"`~@\d:#][^\s,;()\[\]{}'"`~@]*/),
 
     string: ($) =>
       seq('"', repeat(choice($.escape_sequence, /[^"\\]+/)), '"'),
@@ -58,6 +59,8 @@ module.exports = grammar({
     unquote_splicing: ($) => seq("~@", $._form),
 
     unquote: ($) => seq("~", $._form),
+
+    deref: ($) => seq("@", $._form),
 
     comment: ($) => token(seq(";", /.*/)),
   },

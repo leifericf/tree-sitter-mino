@@ -59,3 +59,42 @@ nested quasiquote with splice
           (number)
           (number)))
       (number))))
+
+===
+deref
+===
+
+@x
+
+---
+
+(source
+  (deref
+    (symbol)))
+
+===
+nested deref
+===
+
+@@x
+
+---
+
+(source
+  (deref
+    (deref
+      (symbol))))
+
+===
+deref list
+===
+
+@(atom 42)
+
+---
+
+(source
+  (deref
+    (list
+      (symbol)
+      (number))))

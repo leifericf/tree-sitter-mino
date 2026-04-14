@@ -67,6 +67,10 @@
         {
           "type": "SYMBOL",
           "name": "unquote"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "deref"
         }
       ]
     },
@@ -144,7 +148,7 @@
       "type": "TOKEN",
       "content": {
         "type": "PATTERN",
-        "value": "[^\\s,;()\\[\\]{}'\"`~\\d:#][^\\s,;()\\[\\]{}'\"`~]*"
+        "value": "[^\\s,;()\\[\\]{}'\"`~@\\d:#][^\\s,;()\\[\\]{}'\"`~@]*"
       }
     },
     "string": {
@@ -308,6 +312,19 @@
         {
           "type": "STRING",
           "value": "~"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_form"
+        }
+      ]
+    },
+    "deref": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "@"
         },
         {
           "type": "SYMBOL",
