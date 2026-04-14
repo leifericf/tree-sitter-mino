@@ -1,0 +1,97 @@
+===
+integers
+===
+
+42 -1 0 +5
+
+---
+
+(source
+  (number)
+  (number)
+  (number)
+  (number))
+
+===
+floats
+===
+
+3.14 -0.5 1e10 2.5E-3
+
+---
+
+(source
+  (number)
+  (number)
+  (number)
+  (number))
+
+===
+nil
+===
+
+nil
+
+---
+
+(source
+  (nil))
+
+===
+booleans
+===
+
+true false
+
+---
+
+(source
+  (boolean)
+  (boolean))
+
+===
+strings
+===
+
+"hello" "" "with \"escape\" \n\t"
+
+---
+
+(source
+  (string)
+  (string)
+  (string
+    (escape_sequence)
+    (escape_sequence)
+    (escape_sequence)
+    (escape_sequence)))
+
+===
+keywords
+===
+
+:foo :my-key :a
+
+---
+
+(source
+  (keyword)
+  (keyword)
+  (keyword))
+
+===
+symbols
+===
+
+foo bar-baz + <= not= my-var? *x*
+
+---
+
+(source
+  (symbol)
+  (symbol)
+  (symbol)
+  (symbol)
+  (symbol)
+  (symbol)
+  (symbol))

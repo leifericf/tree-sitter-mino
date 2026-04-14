@@ -1,0 +1,39 @@
+===
+line comment
+===
+
+; this is a comment
+
+---
+
+(source
+  (comment))
+
+===
+comment after form
+===
+
+42 ; trailing comment
+
+---
+
+(source
+  (number)
+  (comment))
+
+===
+comment between forms
+===
+
+(+ 1
+  ; middle
+  2)
+
+---
+
+(source
+  (list
+    (symbol)
+    (number)
+    (comment)
+    (number)))

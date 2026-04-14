@@ -1,0 +1,61 @@
+===
+quote symbol
+===
+
+'x
+
+---
+
+(source
+  (quote
+    (symbol)))
+
+===
+quote list
+===
+
+'(1 2 3)
+
+---
+
+(source
+  (quote
+    (list
+      (number)
+      (number)
+      (number))))
+
+===
+quasiquote with unquote and splice
+===
+
+`(a ~b ~@c)
+
+---
+
+(source
+  (quasiquote
+    (list
+      (symbol)
+      (unquote
+        (symbol))
+      (unquote_splicing
+        (symbol)))))
+
+===
+nested quasiquote with splice
+===
+
+`(~@(list 1 2) 3)
+
+---
+
+(source
+  (quasiquote
+    (list
+      (unquote_splicing
+        (list
+          (symbol)
+          (number)
+          (number)))
+      (number))))

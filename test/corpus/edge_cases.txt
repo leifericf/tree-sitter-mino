@@ -1,0 +1,151 @@
+===
+comma as whitespace
+===
+
+{:a 1, :b 2}
+
+---
+
+(source
+  (map
+    (keyword)
+    (number)
+    (keyword)
+    (number)))
+
+===
+adjacent forms
+===
+
+(a)(b)
+
+---
+
+(source
+  (list
+    (symbol))
+  (list
+    (symbol)))
+
+===
+empty source
+===
+
+
+---
+
+(source)
+
+===
+plus and minus as symbols
+===
+
++ - +foo
+
+---
+
+(source
+  (symbol)
+  (symbol)
+  (symbol))
+
+===
+special form syntax
+===
+
+(def x 42)
+
+---
+
+(source
+  (list
+    (symbol)
+    (symbol)
+    (number)))
+
+===
+let bindings
+===
+
+(let (x 1 y 2) (+ x y))
+
+---
+
+(source
+  (list
+    (symbol)
+    (list
+      (symbol)
+      (number)
+      (symbol)
+      (number))
+    (list
+      (symbol)
+      (symbol)
+      (symbol))))
+
+===
+fn with variadic parameter
+===
+
+((fn (a & b) (list a b)) 1 2 3)
+
+---
+
+(source
+  (list
+    (list
+      (symbol)
+      (list
+        (symbol)
+        (symbol)
+        (symbol))
+      (list
+        (symbol)
+        (symbol)
+        (symbol)))
+    (number)
+    (number)
+    (number)))
+
+===
+try catch
+===
+
+(try (+ 1 2) (catch e :fail))
+
+---
+
+(source
+  (list
+    (symbol)
+    (list
+      (symbol)
+      (number)
+      (number))
+    (list
+      (symbol)
+      (symbol)
+      (keyword))))
+
+===
+defmacro with quasiquote
+===
+
+(defmacro twice (x) `(do ~x ~x))
+
+---
+
+(source
+  (list
+    (symbol)
+    (symbol)
+    (list
+      (symbol))
+    (quasiquote
+      (list
+        (symbol)
+        (unquote
+          (symbol))
+        (unquote
+          (symbol))))))

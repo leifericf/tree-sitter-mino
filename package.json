@@ -1,0 +1,54 @@
+{
+  "name": "tree-sitter-mino",
+  "version": "0.1.0",
+  "description": "tree-sitter grammar for the mino language",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leifericf/tree-sitter-mino"
+  },
+  "main": "bindings/node",
+  "keywords": [
+    "incremental",
+    "parsing",
+    "tree-sitter",
+    "mino"
+  ],
+  "files": [
+    "grammar.js",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**"
+  ],
+  "dependencies": {
+    "node-addon-api": "^8.3.1",
+    "node-gyp-build": "^4.8.4"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.22.4"
+  },
+  "peerDependenciesMeta": {
+    "tree-sitter": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.26.8"
+  },
+  "scripts": {
+    "build": "tree-sitter generate && node-gyp build",
+    "test": "tree-sitter test",
+    "parse": "tree-sitter parse"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.mino",
+      "file-types": [
+        "mino"
+      ],
+      "highlights": "queries/highlights.scm"
+    }
+  ]
+}

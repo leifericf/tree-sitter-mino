@@ -1,0 +1,150 @@
+===
+empty list
+===
+
+()
+
+---
+
+(source
+  (list))
+
+===
+list with atoms
+===
+
+(1 2 3)
+
+---
+
+(source
+  (list
+    (number)
+    (number)
+    (number)))
+
+===
+empty vector
+===
+
+[]
+
+---
+
+(source
+  (vector))
+
+===
+vector with atoms
+===
+
+[1 2 3]
+
+---
+
+(source
+  (vector
+    (number)
+    (number)
+    (number)))
+
+===
+empty map
+===
+
+{}
+
+---
+
+(source
+  (map))
+
+===
+map with key-value pairs
+===
+
+{:a 1 :b 2}
+
+---
+
+(source
+  (map
+    (keyword)
+    (number)
+    (keyword)
+    (number)))
+
+===
+empty set
+===
+
+#{}
+
+---
+
+(source
+  (set))
+
+===
+set with atoms
+===
+
+#{1 2 3}
+
+---
+
+(source
+  (set
+    (number)
+    (number)
+    (number)))
+
+===
+nested collections
+===
+
+(list [1 {:a #{:b}}])
+
+---
+
+(source
+  (list
+    (symbol)
+    (vector
+      (number)
+      (map
+        (keyword)
+        (set
+          (keyword))))))
+
+===
+deeply nested lists
+===
+
+((((1))))
+
+---
+
+(source
+  (list
+    (list
+      (list
+        (list
+          (number))))))
+
+===
+deeply nested maps
+===
+
+{:a {:b {:c 1}}}
+
+---
+
+(source
+  (map
+    (keyword)
+    (map
+      (keyword)
+      (map
+        (keyword)
+        (number)))))

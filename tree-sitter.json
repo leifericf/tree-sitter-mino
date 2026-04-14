@@ -1,0 +1,35 @@
+{
+  "grammars": [
+    {
+      "name": "mino",
+      "camelcase": "Mino",
+      "scope": "source.mino",
+      "path": ".",
+      "file-types": [
+        "mino"
+      ],
+      "highlights": "queries/highlights.scm"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "tree-sitter grammar for the mino language",
+    "authors": [
+      {
+        "name": "Leif Eric Fredheim"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/leifericf/tree-sitter-mino"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}
