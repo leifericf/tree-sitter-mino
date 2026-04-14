@@ -24,9 +24,13 @@
 ; Special forms and standard macros override function.call
 (list . (symbol) @keyword
   (#any-of? @keyword
-    "def" "defmacro" "if" "do" "let" "fn" "loop" "recur"
+    "def" "defmacro" "defn" "if" "do" "let" "fn" "loop" "recur"
     "try" "catch" "quote" "quasiquote"
-    "when" "cond" "and" "or" "->" "->>"))
+    "when" "cond" "and" "or" "->" "->>"
+    "if-not" "when-not" "if-let" "when-let" "if-some" "when-some"
+    "as->" "cond->" "cond->>"
+    "doto" "dotimes" "doseq" "for" "time"
+    "condp" "case" "lazy-seq"))
 
 ; Name being defined after def
 (list
