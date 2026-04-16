@@ -79,6 +79,10 @@
         {
           "type": "SYMBOL",
           "name": "discard"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "metadata"
         }
       ]
     },
@@ -147,7 +151,7 @@
           },
           {
             "type": "PATTERN",
-            "value": "[^\\s,;()\\[\\]{}'\"`~]+"
+            "value": "[^\\s,;()\\[\\]{}'\"`~^]+"
           }
         ]
       }
@@ -156,7 +160,7 @@
       "type": "TOKEN",
       "content": {
         "type": "PATTERN",
-        "value": "[^\\s,;()\\[\\]{}'\"`~@\\d:#][^\\s,;()\\[\\]{}'\"`~@]*"
+        "value": "[^\\s,;()\\[\\]{}'\"`~@\\d:#^][^\\s,;()\\[\\]{}'\"`~@^]*"
       }
     },
     "string": {
@@ -366,6 +370,23 @@
         {
           "type": "STRING",
           "value": "#_"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_form"
+        }
+      ]
+    },
+    "metadata": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "^"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_form"
         },
         {
           "type": "SYMBOL",

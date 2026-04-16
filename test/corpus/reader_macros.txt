@@ -163,3 +163,39 @@ shorthand fn with map
       (symbol)
       (symbol))
     (symbol)))
+
+===
+metadata with map
+===
+
+^{:private true} (defn helper [x] x)
+
+---
+
+(source
+  (metadata
+    (map
+      (keyword)
+      (boolean))
+    (list
+      (symbol)
+      (symbol)
+      (vector
+        (symbol))
+      (symbol))))
+
+===
+metadata keyword shorthand
+===
+
+^:private [1 2 3]
+
+---
+
+(source
+  (metadata
+    (keyword)
+    (vector
+      (number)
+      (number)
+      (number))))

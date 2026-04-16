@@ -13,7 +13,7 @@
 ["(" ")" "[" "]" "{" "}" "#{" "#("] @punctuation.bracket
 
 ; Reader macro prefixes
-["'" "`" "~" "~@" "#_"] @punctuation.special
+["'" "`" "~" "~@" "#_" "^"] @punctuation.special
 
 ; Symbols (generic, overridden below for special forms)
 (symbol) @variable

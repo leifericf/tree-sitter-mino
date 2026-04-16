@@ -37,6 +37,10 @@
           "named": true
         },
         {
+          "type": "metadata",
+          "named": true
+        },
+        {
           "type": "nil",
           "named": true
         },
@@ -113,6 +117,10 @@
         },
         {
           "type": "map",
+          "named": true
+        },
+        {
+          "type": "metadata",
           "named": true
         },
         {
@@ -195,6 +203,10 @@
           "named": true
         },
         {
+          "type": "metadata",
+          "named": true
+        },
+        {
           "type": "nil",
           "named": true
         },
@@ -271,6 +283,93 @@
         },
         {
           "type": "map",
+          "named": true
+        },
+        {
+          "type": "metadata",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quasiquote",
+          "named": true
+        },
+        {
+          "type": "quote",
+          "named": true
+        },
+        {
+          "type": "set",
+          "named": true
+        },
+        {
+          "type": "shorthand_fn",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "unquote",
+          "named": true
+        },
+        {
+          "type": "unquote_splicing",
+          "named": true
+        },
+        {
+          "type": "vector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "metadata",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "deref",
+          "named": true
+        },
+        {
+          "type": "discard",
+          "named": true
+        },
+        {
+          "type": "keyword",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "map",
+          "named": true
+        },
+        {
+          "type": "metadata",
           "named": true
         },
         {
@@ -353,6 +452,10 @@
           "named": true
         },
         {
+          "type": "metadata",
+          "named": true
+        },
+        {
           "type": "nil",
           "named": true
         },
@@ -429,6 +532,10 @@
         },
         {
           "type": "map",
+          "named": true
+        },
+        {
+          "type": "metadata",
           "named": true
         },
         {
@@ -511,6 +618,10 @@
           "named": true
         },
         {
+          "type": "metadata",
+          "named": true
+        },
+        {
           "type": "nil",
           "named": true
         },
@@ -587,6 +698,10 @@
         },
         {
           "type": "map",
+          "named": true
+        },
+        {
+          "type": "metadata",
           "named": true
         },
         {
@@ -667,6 +782,10 @@
         },
         {
           "type": "map",
+          "named": true
+        },
+        {
+          "type": "metadata",
           "named": true
         },
         {
@@ -764,6 +883,10 @@
           "named": true
         },
         {
+          "type": "metadata",
+          "named": true
+        },
+        {
           "type": "nil",
           "named": true
         },
@@ -843,6 +966,10 @@
           "named": true
         },
         {
+          "type": "metadata",
+          "named": true
+        },
+        {
           "type": "nil",
           "named": true
         },
@@ -919,6 +1046,10 @@
         },
         {
           "type": "map",
+          "named": true
+        },
+        {
+          "type": "metadata",
           "named": true
         },
         {
@@ -1006,6 +1137,10 @@
   },
   {
     "type": "]",
+    "named": false
+  },
+  {
+    "type": "^",
     "named": false
   },
   {

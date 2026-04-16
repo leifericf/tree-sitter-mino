@@ -28,6 +28,7 @@ module.exports = grammar({
         $.deref,
         $.shorthand_fn,
         $.discard,
+        $.metadata,
       ),
 
     nil: ($) => "nil",
@@ -37,9 +38,9 @@ module.exports = grammar({
     number: ($) =>
       token(prec(1, seq(optional(choice("+", "-")), /\d+(\.\d*)?([eE][+-]?\d+)?/))),
 
-    keyword: ($) => token(seq(":", /[^\s,;()\[\]{}'"`~]+/)),
+    keyword: ($) => token(seq(":", /[^\s,;()\[\]{}'"`~^]+/)),
 
-    symbol: ($) => token(/[^\s,;()\[\]{}'"`~@\d:#][^\s,;()\[\]{}'"`~@]*/),
+    symbol: ($) => token(/[^\s,;()\[\]{}'"`~@\d:#^][^\s,;()\[\]{}'"`~@^]*/),
 
     string: ($) =>
       seq('"', repeat(choice($.escape_sequence, /[^"\\]+/)), '"'),
@@ -67,6 +68,8 @@ module.exports = grammar({
     shorthand_fn: ($) => seq("#(", repeat($._form), ")"),
 
     discard: ($) => seq("#_", $._form),
+
+    metadata: ($) => seq("^", $._form, $._form),
 
     comment: ($) => token(seq(";", /.*/)),
   },
