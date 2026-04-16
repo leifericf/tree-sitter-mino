@@ -98,3 +98,68 @@ deref list
     (list
       (symbol)
       (number))))
+
+===
+discard form
+===
+
+[1 #_2 3]
+
+---
+
+(source
+  (vector
+    (number)
+    (discard
+      (number))
+    (number)))
+
+===
+discard list
+===
+
+(+ 1 #_(* 2 3) 4)
+
+---
+
+(source
+  (list
+    (symbol)
+    (number)
+    (discard
+      (list
+        (symbol)
+        (number)
+        (number)))
+    (number)))
+
+===
+shorthand fn
+===
+
+#(+ % 1)
+
+---
+
+(source
+  (shorthand_fn
+    (symbol)
+    (symbol)
+    (number)))
+
+===
+shorthand fn with map
+===
+
+(map #(* %1 %2) pairs)
+
+---
+
+(source
+  (list
+    (symbol)
+    (shorthand_fn
+      (symbol)
+      (symbol)
+      (symbol))
+    (symbol)))

@@ -26,6 +26,8 @@ module.exports = grammar({
         $.unquote_splicing,
         $.unquote,
         $.deref,
+        $.shorthand_fn,
+        $.discard,
       ),
 
     nil: ($) => "nil",
@@ -61,6 +63,10 @@ module.exports = grammar({
     unquote: ($) => seq("~", $._form),
 
     deref: ($) => seq("@", $._form),
+
+    shorthand_fn: ($) => seq("#(", repeat($._form), ")"),
+
+    discard: ($) => seq("#_", $._form),
 
     comment: ($) => token(seq(";", /.*/)),
   },

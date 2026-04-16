@@ -10,10 +10,10 @@
 (comment) @comment
 
 ; Brackets
-["(" ")" "[" "]" "{" "}" "#{"] @punctuation.bracket
+["(" ")" "[" "]" "{" "}" "#{" "#("] @punctuation.bracket
 
 ; Reader macro prefixes
-["'" "`" "~" "~@"] @punctuation.special
+["'" "`" "~" "~@" "#_"] @punctuation.special
 
 ; Symbols (generic, overridden below for special forms)
 (symbol) @variable
