@@ -17,6 +17,7 @@ module.exports = grammar({
         $.keyword,
         $.symbol,
         $.string,
+        $.character,
         $.list,
         $.vector,
         $.map,
@@ -29,6 +30,11 @@ module.exports = grammar({
         $.shorthand_fn,
         $.discard,
         $.metadata,
+        $.var_quote,
+        $.reader_conditional,
+        $.reader_conditional_splice,
+        $.tagged_literal,
+        $.special_float,
       ),
 
     nil: ($) => "nil",
@@ -36,16 +42,42 @@ module.exports = grammar({
     boolean: ($) => choice("true", "false"),
 
     number: ($) =>
-      token(prec(1, seq(optional(choice("+", "-")), /\d+(\.\d*)?([eE][+-]?\d+)?/))),
+      token(
+        prec(
+          1,
+          choice(
+            // Hex: 0xFF, +0xFF, -0xFF
+            seq(optional(choice("+", "-")), /0[xX][0-9a-fA-F]+/),
+            // Radix: 2r1010, 36rZZ
+            seq(optional(choice("+", "-")), /\d{1,2}r[0-9a-zA-Z]+/),
+            // Ratio: 1/2, -3/4
+            seq(optional(choice("+", "-")), /\d+\/\d+/),
+            // Standard decimal with optional N/M suffix
+            seq(
+              optional(choice("+", "-")),
+              /\d+(\.\d*)?([eE][+-]?\d+)?[NM]?/,
+            ),
+          ),
+        ),
+      ),
 
     keyword: ($) => token(seq(":", /[^\s,;()\[\]{}'"`~^]+/)),
 
-    symbol: ($) => token(/[^\s,;()\[\]{}'"`~@\d:#^][^\s,;()\[\]{}'"`~@^]*/),
+    symbol: ($) =>
+      token(/[^\s,;()\[\]{}'"`~@\d:#^\\][^\s,;()\[\]{}'"`~@^]*/),
 
     string: ($) =>
       seq('"', repeat(choice($.escape_sequence, /[^"\\]+/)), '"'),
 
     escape_sequence: ($) => token.immediate(/\\./),
+
+    character: ($) =>
+      token(
+        seq(
+          "\\",
+          choice("space", "newline", "tab", "return", "backspace", /./),
+        ),
+      ),
 
     list: ($) => seq("(", repeat($._form), ")"),
 
@@ -70,6 +102,16 @@ module.exports = grammar({
     discard: ($) => seq("#_", $._form),
 
     metadata: ($) => seq("^", $._form, $._form),
+
+    var_quote: ($) => seq("#'", $._form),
+
+    reader_conditional: ($) => seq("#?", $.list),
+
+    reader_conditional_splice: ($) => seq("#?@", $.list),
+
+    tagged_literal: ($) => seq("#", $.symbol, $._form),
+
+    special_float: ($) => token(choice("##Inf", "##-Inf", "##NaN")),
 
     comment: ($) => token(seq(";", /.*/)),
   },
