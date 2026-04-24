@@ -80,6 +80,27 @@ keywords
   (keyword))
 
 ===
+characters
+===
+
+\A \space \newline \tab \return \backspace \formfeed \u00e9 \o77 \{ \é
+
+---
+
+(source
+  (character)
+  (character)
+  (character)
+  (character)
+  (character)
+  (character)
+  (character)
+  (character)
+  (character)
+  (character)
+  (character))
+
+===
 symbols
 ===
 

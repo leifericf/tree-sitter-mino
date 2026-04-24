@@ -75,7 +75,17 @@ module.exports = grammar({
       token(
         seq(
           "\\",
-          choice("space", "newline", "tab", "return", "backspace", /./),
+          choice(
+            "space",
+            "newline",
+            "tab",
+            "return",
+            "backspace",
+            "formfeed",
+            /u[0-9a-fA-F]{4}/,
+            /o[0-7]{1,3}/,
+            /./,
+          ),
         ),
       ),
 

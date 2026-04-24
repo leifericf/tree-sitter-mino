@@ -9,6 +9,10 @@ All notable changes to tree-sitter-mino are documented here.
 - Anonymous function `#()` and discard `#_` syntax
 - Deref `@` reader macro
 - Core macro keyword highlighting
+- Character literals with full mino reader coverage: `\space`, `\newline`,
+  `\tab`, `\return`, `\backspace`, `\formfeed`, `\uNNNN` unicode escape,
+  `\oNNN` octal escape, `\{` terminator-as-literal, and UTF-8 multibyte
+  characters. Highlight rule added so editors colorize `(character)`.
 
 ## v0.1.0
 
