@@ -27,6 +27,48 @@ floats
   (number))
 
 ===
+ratios
+===
+
+1/2 -3/4 +7/8 100/1
+
+---
+
+(source
+  (number)
+  (number)
+  (number)
+  (number))
+
+===
+bigint suffix N
+===
+
+1N 42N -7N +123N
+
+---
+
+(source
+  (number)
+  (number)
+  (number)
+  (number))
+
+===
+bigdec suffix M
+===
+
+1M 1.5M -2.25M +3.14M
+
+---
+
+(source
+  (number)
+  (number)
+  (number)
+  (number))
+
+===
 nil
 ===
 
