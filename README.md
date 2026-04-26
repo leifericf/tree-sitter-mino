@@ -21,7 +21,7 @@ parser_config.mino = {
   filetype = "mino",
 }
 
-vim.filetype.add({ extension = { mino = "mino" } })
+vim.filetype.add({ extension = { clj = "mino", cljc = "mino" } })
 ```
 
 Then run `:TSInstall mino`.
@@ -34,7 +34,7 @@ Add to `~/.config/helix/languages.toml`:
 [[language]]
 name = "mino"
 scope = "source.mino"
-file-types = ["mino"]
+file-types = ["clj", "cljc"]
 comment-token = ";"
 indent = { tab-width = 2, unit = "  " }
 
@@ -54,7 +54,7 @@ Create a language extension or add to your settings:
   "languages": {
     "mino": {
       "grammar": "mino",
-      "file_types": ["mino"]
+      "file_types": ["clj", "cljc"]
     }
   }
 }
@@ -75,7 +75,7 @@ Requires [tree-sitter-cli](https://github.com/tree-sitter/tree-sitter/blob/maste
 ```
 make generate    # compile grammar.js to C parser
 make test        # run test corpus
-make highlight   # preview highlighting on example.mino
+make highlight   # preview highlighting on example.clj
 ```
 
 ## License

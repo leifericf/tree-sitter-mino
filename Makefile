@@ -7,7 +7,7 @@ test: generate
 	tree-sitter test
 
 highlight: generate
-	tree-sitter highlight example.mino
+	tree-sitter highlight example.clj
 
 clean:
 	rm -rf build

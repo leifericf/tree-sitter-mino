@@ -46,7 +46,8 @@
     {
       "scope": "source.mino",
       "file-types": [
-        "mino"
+        "clj",
+        "cljc"
       ],
       "highlights": "queries/highlights.scm"
     }
